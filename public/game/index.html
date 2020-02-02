@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chess</title>
+    <!--mui css-->
+    <link href="//cdn.muicss.com/mui-0.10.1/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
+    <!--chess.js and chessboard.js-->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+        integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"
+        integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz"
+        crossorigin="anonymous"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.8.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.8.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/7.8.0/firebase-messaging.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <script defer src="app.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <style>
+        /**
+     * Body CSS
+     */
+        html,
+        body {
+            height: 100%;
+        }
+
+        html,
+        body,
+        input,
+        textarea,
+        button {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+        }
+
+
+        /**
+     * Header CSS
+     */
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        header ul.mui-list--inline {
+            margin-bottom: 0;
+        }
+
+        header a {
+            color: white;
+        }
+
+        header table {
+            width: 100%;
+        }
+
+
+        /**
+     * Content CSS
+     */
+        #content-wrapper {
+            min-height: 100%;
+
+            /* sticky footer */
+            box-sizing: border-box;
+            margin-bottom: -100px;
+            padding-bottom: 100px;
+        }
+
+
+        /**
+     * Footer CSS
+     */
+        footer {
+            box-sizing: border-box;
+            height: 100px;
+            background-color: #eee;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-appbar mui--z1">
+        <!-- Appbar HTML goes here -->
+        <div class="mui-container">
+            <table>
+                <tr class="mui--appbar-height">
+                    <td class="mui--text-title">Chess</td>
+                    <td class="mui--text-right">
+                        <ul class="mui-list--inline mui--text-body2">
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </header>
+    <div id="content-wrapper" class="mui--text-center">
+        <!-- Content HTML goes here -->
+        <center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="mui-container">
+                <div id="myBoard" style="width: 400px"></div>
+                <label>Status:</label>
+                <div id="status"></div>
+                <label>Share url:</label>
+                <div id="surl"></div>
+            </div>
+        </center>
+    </div>
+    <footer>
+        <div class="mui-container mui--text-center">
+            Made with ♥ by <a href="#">Lucas</a>
+        </div>
+    </footer>
+</body>
+
+</html>
